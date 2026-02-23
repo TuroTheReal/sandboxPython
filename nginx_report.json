@@ -1,0 +1,24 @@
+{
+  "total": 13,
+  "count_2xx": 3,
+  "count_4xx": 4,
+  "count_5xx": 6,
+  "error_rate": 77,
+  "error_endpoints": [
+    {
+      "method": "POST",
+      "endpoint": "/api/claims",
+      "error_count": 5
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/login",
+      "error_count": 2
+    },
+    {
+      "method": "GET",
+      "endpoint": "/api/claims",
+      "error_count": 1
+    }
+  ]
+}
