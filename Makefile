@@ -16,10 +16,10 @@ install:
 
 # Run (appel direct au python du venv)
 run:
-	$(PYTHON) transaction_assure/assure.py
+	$(PYTHON) transaction_assure/incomes.py
 
 test:
-	.venv/bin/pytest transaction_assure/test_assure.py -v
+	.venv/bin/pytest transaction_assure/test_incomes.py -v
 
 # Clean
 clean:

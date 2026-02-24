@@ -95,7 +95,7 @@ def clean_db(conn, min_stars):
 
 if __name__ == '__main__':
 
-    conn = sqlite3.connect('fromGitToSQLlite.db')
+    conn = sqlite3.connect('API/fromGitToSQLlite.db')
 
     repos = fetch_api()
     create_db(conn)
