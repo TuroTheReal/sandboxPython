@@ -1,2 +1,10 @@
-__pycache__*
-.venv*
+# Virtual environment
+.venv/
+
+# Python cache (tous niveaux)
+__pycache__/
+*.pyc
+*.pyo
+
+# Pytest
+.pytest_cache/

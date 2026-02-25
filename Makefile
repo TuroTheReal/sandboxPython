@@ -1,31 +1,33 @@
-.PHONY: all install run test clean
+.PHONY: all install run test clean shell
 
-VENV := .venv
+VENV   := .venv
 PYTHON := $(VENV)/bin/python
-TEST := $(VENV)/bin/pytest
-PIP := $(VENV)/bin/pip
+TEST   := $(VENV)/bin/pytest
+PIP    := $(VENV)/bin/pip
 
 all: install
 
-# Setup venv (pas d'activation)
+# Setup venv
 install:
 	python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 	@echo "✅ Setup complete"
 
-# Run (appel direct au python du venv)
+# Lancer un fichier: make run FILE=transaction_assure_project/incomes.py
 run:
-	$(PYTHON) transaction_assure/incomes.py
+	@test -n "$(FILE)" || (echo "❌ Usage: make run FILE=<chemin/vers/fichier.py>" && exit 1)
+	$(PYTHON) $(FILE)
 
+# Tester un fichier: make test FILE=transaction_assure_project/test_incomes.py
 test:
-	.venv/bin/pytest transaction_assure/test_incomes.py -v
+	@test -n "$(FILE)" || (echo "❌ Usage: make test FILE=<chemin/vers/test_file.py>" && exit 1)
+	$(TEST) $(FILE) -v
 
 # Clean
 clean:
 	rm -rf $(VENV)
 
-# Dev: active venv pour session interactive
+# Activer le venv pour session interactive
 shell:
-	@echo "Activating venv..."
 	@echo "Run: source $(VENV)/bin/activate"
