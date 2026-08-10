@@ -1,6 +1,6 @@
 # algo-prep
 
-Entraînement algo pour entretiens, orienté DevOps/SRE/Cloud.
+Entraînement algo pour entretiens SWE (tous types de postes, pas seulement DevOps).
 Objectif: bases solides et durables, prêtes à fignoler quand un entretien tombe.
 
 Modèle de travail: **LeetCode pour résoudre, ce repo + Claude pour comprendre
@@ -11,24 +11,28 @@ et réviser.**
                     après, on log pour la répétition espacée.
 
 Ce repo ne contient donc PAS de solutions à faire tourner en local (le juge
-LeetCode est meilleur). Il contient les notes de cours et le suivi.
+LeetCode est meilleur). Il contient les notes de cours, les listes d'exercices
+et le suivi.
 
 ## Ce qu'il y a dedans
 
 - `CHEATSHEET.md`             Big-O + toolkit Python, ta référence rapide
+- `PROBLEMS.md`              les pulls d'exercices LeetCode par pattern (easy/medium/hard)
 - `PROGRESS.md`              suivi + répétition espacée ("Seul ?" = la vérité)
-- `patterns/*/README.md`     par pattern: l'idée, les signaux, les outils, la
-                             liste des problèmes LeetCode à faire
+- `patterns/*/README.md`     par pattern: l'idée, les signaux, les outils (le "concept")
 - `patterns/00_fundamentals/` Big-O: leçon + exercice d'analyse de complexité
-                             (ça, LeetCode ne le fait pas)
 
-## La boucle par pattern
+## La boucle par pattern (la méthodo)
 
-1. Claude explique le pattern (l'idée, quand le reconnaître).
-2. Tu résous les problèmes LeetCode listés dans le README du pattern, seul,
-   sans regarder la solution.
-3. Tu colles ton code ici + ta complexité annoncée (Time + Space). Claude review.
-4. On note dans `PROGRESS.md`. Tu refais à J+2 et J+7.
+Pour chaque step de la roadmap, on tourne ce cycle:
+
+1. **CONCEPT (Claude)**  je t'explique le pattern: l'idée, quand le reconnaître,
+   une démo jetable. Comme on a fait Big-O.
+2. **PRATIQUE (toi)**    tu pioches dans la pull du pattern (`PROBLEMS.md`),
+   easy/medium/hard selon ta forme, tu résous sur LeetCode sans la solution.
+3. **REVIEW (Claude)**   tu colles ton code + ta complexité, je fais le retour
+   (justesse, complexité réelle, propreté, idiomes Python).
+4. **ANCRAGE**           on note dans `PROGRESS.md`, tu refais à J+2 et J+7.
 
 Bloqué plus de ~15 min sur un problème ? Tu demandes un indice, pas la solution.
 
@@ -41,7 +45,9 @@ Bloqué plus de ~15 min sur un problème ? Tu demandes un indice, pas la solutio
 5. CODER        proprement, à voix haute
 6. TESTER       cas normal + limites + complexité finale
 
-## Roadmap (ordre NeetCode, gratuit sur neetcode.io)
+## Roadmap (ordre NeetCode, exercices détaillés dans PROBLEMS.md)
+
+Core (le gros des entretiens tape ici):
 
 - [x] 0. Fondamentaux: Big-O + toolkit Python
 - [ ] 1. Arrays & Hashing   (on est ici)
@@ -52,7 +58,15 @@ Bloqué plus de ~15 min sur un problème ? Tu demandes un indice, pas la solutio
 - [ ] 6. Linked List
 - [ ] 7. Trees (BFS/DFS)
 
-Stretch plus tard: Heap / top-K, Backtracking, Graphs, Intervals, DP.
+Avancé (après le core):
+
+- [ ] 8. Tries
+- [ ] 9. Heap / Priority Queue
+- [ ] 10. Backtracking
+- [ ] 11. Graphs
+- [ ] 12. Dynamic Programming (1-D puis 2-D)
+- [ ] 13. Intervals
+- [ ] 14. Greedy
 
 ## Rythme
 

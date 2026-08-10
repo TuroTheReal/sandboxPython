@@ -47,26 +47,11 @@ mémoriser au vol**. Tu vas le refaire plusieurs fois.
 (`collections.Counter(s)` fait ça en une ligne. Mais comprends la version
 manuelle d'abord: c'est celle qu'on te demande d'écrire au tableau.)
 
-## Les problèmes LeetCode (ordre conseillé)
+## Les problèmes LeetCode
+
+La liste complète easy/medium/hard de ce pattern est dans `../../PROBLEMS.md`
+(section "1. Arrays & Hashing"). Commence par les 3 easy (#217, #242, #1),
+enchaîne sur les medium quand le réflexe est là.
 
 Sur leetcode.com, sans regarder la solution. Colle-moi ton code + ta
-complexité après chacun, je review.
-
-Pour commencer (easy):
-
-- #217 Contains Duplicate
-- #242 Valid Anagram
-- #1   Two Sum
-
-Ensuite (medium):
-
-- #49  Group Anagrams
-- #347 Top K Frequent Elements
-- #238 Product of Array Except Self
-- #36  Valid Sudoku
-- #128 Longest Consecutive Sequence
-
-Note: #271 Encode and Decode Strings est bloqué derrière LeetCode Premium,
-mais gratuit sur neetcode.io.
-
-Objectif sur tous: viser O(n) en temps, et annoncer Time + Space.
+complexité (Time + Space) après chacun, je review. Objectif: viser O(n).
