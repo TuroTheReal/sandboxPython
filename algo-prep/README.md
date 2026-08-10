@@ -1,22 +1,38 @@
 # algo-prep
 
-Entraînement algo pour entretiens, orienté DevOps/SRE/Cloud, en Python.
+Entraînement algo pour entretiens, orienté DevOps/SRE/Cloud.
 Objectif: bases solides et durables, prêtes à fignoler quand un entretien tombe.
 
-## Modèle 2 phases
+Modèle de travail: **LeetCode pour résoudre, ce repo + Claude pour comprendre
+et réviser.**
 
-- **Phase 1 (maintenant)**: construire la base. Fondamentaux + patterns core,
-  drillés jusqu'à l'automatisme. Rythme soutenable, pas de deadline.
-- **Phase 2 (entretien daté)**: fignoler. Style de la boîte, mocks chronométrés.
+    LeetCode      = la salle de sport. Tu résous, le juge valide (edge cases, timing).
+    repo + Claude = le coach. On explique le pattern avant, on review ta solution
+                    après, on log pour la répétition espacée.
 
-## Comment on bosse (learn-mode)
+Ce repo ne contient donc PAS de solutions à faire tourner en local (le juge
+LeetCode est meilleur). Il contient les notes de cours et le suivi.
 
-- Claude démontre chaque pattern UNE fois sur un exemple jetable.
-- Tous les vrais problèmes: c'est TOI qui codes.
-- Claude vérifie, challenge, débloque avec des indices. Jamais la solution complète.
-- Chaque solution DOIT annoncer sa complexité: `# Time: O(?)  Space: O(?)`.
+## Ce qu'il y a dedans
 
-## La boucle d'entretien (6 étapes)
+- `CHEATSHEET.md`             Big-O + toolkit Python, ta référence rapide
+- `PROGRESS.md`              suivi + répétition espacée ("Seul ?" = la vérité)
+- `patterns/*/README.md`     par pattern: l'idée, les signaux, les outils, la
+                             liste des problèmes LeetCode à faire
+- `patterns/00_fundamentals/` Big-O: leçon + exercice d'analyse de complexité
+                             (ça, LeetCode ne le fait pas)
+
+## La boucle par pattern
+
+1. Claude explique le pattern (l'idée, quand le reconnaître).
+2. Tu résous les problèmes LeetCode listés dans le README du pattern, seul,
+   sans regarder la solution.
+3. Tu colles ton code ici + ta complexité annoncée (Time + Space). Claude review.
+4. On note dans `PROGRESS.md`. Tu refais à J+2 et J+7.
+
+Bloqué plus de ~15 min sur un problème ? Tu demandes un indice, pas la solution.
+
+## La boucle DANS l'entretien (les 6 étapes, à ritualiser)
 
 1. CLARIFIER    reformuler, edge cases, taille des inputs, contraintes
 2. EXEMPLE      dérouler un cas à la main
@@ -25,32 +41,20 @@ Objectif: bases solides et durables, prêtes à fignoler quand un entretien tomb
 5. CODER        proprement, à voix haute
 6. TESTER       cas normal + limites + complexité finale
 
-## Rythme
+## Roadmap (ordre NeetCode, gratuit sur neetcode.io)
 
-~45 min/jour. Régularité > intensité.
-Répétition espacée: chaque problème résolu, le refaire à J+2 et J+7.
-
-## Roadmap Phase 1
-
-- [x] 0. Fondamentaux: Big-O + toolkit Python  <- on est ici
-- [ ] 1. Arrays & Hashing (hashmap, set, Counter)
+- [x] 0. Fondamentaux: Big-O + toolkit Python
+- [ ] 1. Arrays & Hashing   (on est ici)
 - [ ] 2. Two Pointers
 - [ ] 3. Sliding Window
-- [ ] 4. Strings / parsing (saveur DevOps: logs)
-- [ ] 5. Stack
-- [ ] 6. Binary Search
-- [ ] 7. Récursion + BFS/DFS (arbres, graphes)
+- [ ] 4. Stack
+- [ ] 5. Binary Search
+- [ ] 6. Linked List
+- [ ] 7. Trees (BFS/DFS)
 
-Stretch (plus tard): Heap / top-K, Intervals, DP.
+Stretch plus tard: Heap / top-K, Backtracking, Graphs, Intervals, DP.
 
-## Lancer les tests
+## Rythme
 
-    cd algo-prep
-    python -m pytest                              # tout
-    python -m pytest patterns/01_arrays_hashing   # un dossier
-
-`pytest` arrivera au premier problème de code. Pour la leçon 0 (Big-O),
-rien à installer.
-
-Référence Big-O et Python: `CHEATSHEET.md`.
-Suivi d'assiduité: `PROGRESS.md`.
+~45 min/jour. Régularité > intensité. La répétition espacée (J+2, J+7) ancre
+plus que le volume.

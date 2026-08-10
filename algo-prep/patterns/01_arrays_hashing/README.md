@@ -47,15 +47,26 @@ mémoriser au vol**. Tu vas le refaire plusieurs fois.
 (`collections.Counter(s)` fait ça en une ligne. Mais comprends la version
 manuelle d'abord: c'est celle qu'on te demande d'écrire au tableau.)
 
-## À toi
+## Les problèmes LeetCode (ordre conseillé)
 
-- `p01_contains_duplicate.py`
-- `p02_two_sum.py`
+Sur leetcode.com, sans regarder la solution. Colle-moi ton code + ta
+complexité après chacun, je review.
 
-Depuis la racine du repo:
+Pour commencer (easy):
 
-    make test FILE=algo-prep/patterns/01_arrays_hashing/test_arrays_hashing.py
+- #217 Contains Duplicate
+- #242 Valid Anagram
+- #1   Two Sum
 
-Code, lance les tests, et quand c'est vert tu me montres ET tu m'annonces la
-complexité (Time + Space). Bloqué plus de ~15 min ? Tu me dis, indice, pas
-solution.
+Ensuite (medium):
+
+- #49  Group Anagrams
+- #347 Top K Frequent Elements
+- #238 Product of Array Except Self
+- #36  Valid Sudoku
+- #128 Longest Consecutive Sequence
+
+Note: #271 Encode and Decode Strings est bloqué derrière LeetCode Premium,
+mais gratuit sur neetcode.io.
+
+Objectif sur tous: viser O(n) en temps, et annoncer Time + Space.
