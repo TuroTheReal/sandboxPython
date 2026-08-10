@@ -1,14 +1,11 @@
-"""Exercice Big-O.
+"""Big-O: corrigé de référence.
 
-Pour CHAQUE fonction, remplis le bloc juste en dessous:
-    # Time:  O(?)
-    # Space: O(?)
-    # Pourquoi: ...
+Analyser la complexité d'un bout de code existant, c'est ce que LeetCode ne
+teste jamais, et c'est exactement ce qu'un interviewer te demande ("et la
+complexité ?"). Ce fichier garde 7 cas types annotés, à relire au besoin.
 
-Compte les boucles, repère les `y in liste` (O(n)) et les tris (O(n log n)).
-Quand les 7 sont faits, préviens Claude pour la correction.
-
-"Space" = mémoire EN PLUS que tu alloues, hors tableau d'entrée.
+Rappels: compte les boucles, un `y in liste` est O(n), un tri est O(n log n).
+"Space" = mémoire allouée en plus, hors tableau d'entrée.
 """
 
 
@@ -17,9 +14,8 @@ def somme(nums: list[int]) -> int:
     for x in nums:
         total += x
     return total
-# Time:  O(?) On
-# Space: O(?)
-# Pourquoi: boucle for suur liste
+# Time:  O(n)   un seul parcours
+# Space: O(1)   une seule variable, indépendante de n
 
 
 def toutes_les_paires(nums: list[int]) -> list[tuple[int, int]]:
@@ -28,9 +24,8 @@ def toutes_les_paires(nums: list[int]) -> list[tuple[int, int]]:
         for b in nums:
             paires.append((a, b))
     return paires
-# Time:  O(?) On2
-# Space: O(?)
-# Pourquoi: boucle dans boucle
+# Time:  O(n²)  boucle dans boucle
+# Space: O(n²)  la liste de sortie contient n x n paires
 
 
 def contient_zero(nums: list[int]) -> bool:
@@ -38,9 +33,8 @@ def contient_zero(nums: list[int]) -> bool:
         if x == 0:
             return True
     return False
-# Time:  O(?) On
-# Space: O(?)
-# Pourquoi: boucle
+# Time:  O(n)   sortie anticipée possible, mais le pire cas parcourt tout
+# Space: O(1)
 
 
 def recherche_dichotomique(nums_tries: list[int], cible: int) -> bool:
@@ -54,19 +48,17 @@ def recherche_dichotomique(nums_tries: list[int], cible: int) -> bool:
         else:
             hi = mid - 1
     return False
-# Time:  O(?) On
-# Space: O(?)
-# Pourquoi: boucle
+# Time:  O(log n)  l'intervalle [lo, hi] est divisé par 2 à chaque tour
+# Space: O(1)
 
 
 def doublons_lent(nums: list[int]) -> bool:
     for i, x in enumerate(nums):
-        if x in nums[i + 1:]:   # regarde bien ce que fait cette ligne
+        if x in nums[i + 1:]:
             return True
     return False
-# Time:  O(?) On2
-# Space: O(?)
-# Pourquoi: boucle et boucle pour slicing
+# Time:  O(n²)  le slice nums[i+1:] est reparcouru par `in`, dans une boucle
+# Space: O(n)   le slice recrée une liste (jusqu'à n éléments) à chaque tour
 
 
 def doublons_rapide(nums: list[int]) -> bool:
@@ -76,20 +68,18 @@ def doublons_rapide(nums: list[int]) -> bool:
             return True
         vus.add(x)
     return False
-# Time:  O(?) On
-# Space: O(?) On
-# Pourquoi: boucle et set
+# Time:  O(n)   un parcours, lookup set en O(1)
+# Space: O(n)   le set peut contenir jusqu'à n éléments
 
 
 def deux_boucles_separees(nums: list[int]) -> int:
     total = 0
-    for x in nums:            # premiere boucle
+    for x in nums:
         total += x
     maximum = nums[0]
-    for x in nums:            # seconde boucle, APRES la premiere
+    for x in nums:
         if x > maximum:
             maximum = x
     return total + maximum
-# Time:  O(?) On
-# Space: O(?)
-# Pourquoi: boucle et boucle pas dans boucle
+# Time:  O(n)   deux boucles séquentielles: O(n) + O(n) = O(n), pas O(n²)
+# Space: O(1)
