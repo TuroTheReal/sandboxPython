@@ -6,8 +6,8 @@ c'est acquis. Claude tient ce fichier à jour, Arthur code.
 
 | Date       | Problème                  | Pattern        | Temps | Seul ? | J+2       | J+7       | Notes |
 |------------|---------------------------|----------------|-------|--------|-----------|-----------|-------|
-| 2026-08-11 | #242 Valid Anagram        | arrays_hashing | ~     | non    | [ ] 08-13 | [ ] 08-18 | `Counter==Counter`. |
-| 2026-08-13 | #217 Contains Duplicate   | arrays_hashing | ~     | oui    | [ ] 08-15 | [ ] 08-20 | `set` + early-exit. Solo du premier coup. |
+| 2026-08-11 | #242 Valid Anagram        | arrays_hashing | ~     | non    | [x] 08-17 solo | [ ] 08-24 | `Counter==Counter`. Revu de mémoire le 08-17, un seul jet propre = ACQUIS. |
+| 2026-08-13 | #217 Contains Duplicate   | arrays_hashing | ~     | oui    | [x] 08-17 | [ ] 08-24 | `set` + early-exit. Solo du 1er coup. Revu 08-17: structure de mémoire OK, slips syntaxe (`{}` vs `set()`, `.append` vs `.add`) corrigés. |
 | 2026-08-13 | #1 Two Sum                | arrays_hashing | ~     | non    | [ ] 08-15 | [ ] 08-20 | dict `{valeur: indice}`. O(n) espace. |
 | 2026-08-13 | #49 Group Anagrams        | arrays_hashing | ~     | non    | [ ] 08-15 | [ ] 08-20 | `defaultdict(list)` + `tuple(sorted(mot))`. |
 | 2026-08-14 | #347 Top K Frequent       | arrays_hashing | ~     | non    | [ ] 08-16 | [ ] 08-21 | `Counter().most_common(k)`. O(n log k). |
