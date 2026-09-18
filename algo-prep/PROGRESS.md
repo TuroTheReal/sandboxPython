@@ -4,6 +4,13 @@ Répétition espacée: refaire chaque problème à J+2 et J+7.
 "Seul ?" = résolu sans indice ni solution. C'est la colonne qui dit vraiment si
 c'est acquis. Claude tient ce fichier à jour, Arthur code.
 
+## Reprise (note au 18/09)
+
+Dernière activité: 01/09 (#344), ~2,5 semaines de pause.
+Pour reprendre: d'abord une révision (refaire de mémoire #217 / #1 / #167 pour
+récupérer la fluidité), puis finir #20 Valid Parentheses (intro du pattern Stack).
+En attente: à refaire seul → #238, #125. Parkés (trop durs) → #36 Valid Sudoku, #15 3Sum.
+
 | Date       | Problème                  | Pattern        | Temps | Seul ? | J+2       | J+7       | Notes |
 |------------|---------------------------|----------------|-------|--------|-----------|-----------|-------|
 | 2026-08-11 | #242 Valid Anagram        | arrays_hashing | ~     | non    | [x] 08-17 solo | [ ] 08-24 | `Counter==Counter`. Revu de mémoire le 08-17, un seul jet propre = ACQUIS. |
