@@ -21,10 +21,16 @@ No `()` = no execution.
     s.strip()                  removes leading/trailing whitespace
     s.split(",")               splits into a list on the separator
     "-".join(items)            joins a list of str with a separator
-    s[::-1]                    the string reversed
+    s[start:stop:step]         slice: start included, stop EXCLUDED, step (negative = backwards)
+                               "abcdef"[1:4] == "bcd", [:3] == "abc", [::2] == "ace"
+                               always a COPY: O(k) space for k items (lists too)
+    s[::-1]                    the string reversed (whole range, step -1)
+    "".join(c for c in s if c.isalnum())   keep only letters/digits (no built-in for it; O(n) space)
 
 ## Lists
 
+    [0] * n                    list of n zeros, pre-filled so lst[i] = ... works ([] * n == [])
+    [[] for _ in range(n)]     list of n independent lists (NOT [[]] * n: n refs to the same list)
     lst.append(x)              append at end
     sorted(lst)                new sorted list (O(n log n))
     lst[::-1]                  the list reversed
@@ -63,5 +69,7 @@ No `()` = no execution.
 
     for i, x in enumerate(lst)         index + value at the same time
     range(start, stop_excl, step)      e.g. range(len(l)-1, -1, -1) = reverse traversal
+                                       (stop -1 so that index 0 is included; -1 here is a bound, not l[-1])
+    reversed(range(len(l)))            same reverse traversal, easier to read
     a // b                             INTEGER division (drops the remainder)
     a / b                              regular division (float result)
