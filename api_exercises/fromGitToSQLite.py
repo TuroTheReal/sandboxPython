@@ -2,7 +2,7 @@ import requests
 import sqlite3
 
 def format_stars(stars):
-    """Formate le nombre de stars (1000+ → K)"""
+    """Format the star count (1000+ → K)"""
 
     if stars >= 1000:
         return f"{stars / 1000:.1f}K"
@@ -10,7 +10,7 @@ def format_stars(stars):
         return str(stars)
 
 def display_db(conn):
-    """Affiche la DB par ordre de stars par repo"""
+    """Print the DB ordered by stars per repo"""
 
     cursor = conn.cursor()
 
@@ -23,7 +23,7 @@ def display_db(conn):
         print(f"{format_stars(stars):6} ⭐      repo id:{repo_id:3}.  {name:18}  {lang} ")
 
 def fetch_api():
-    """Recupere les infos des 30 premiers repos kubernetes"""
+    """Fetch the info of the first 30 kubernetes repos"""
 
     url = 'https://api.github.com/orgs/kubernetes/repos?per_page=30'
 
@@ -32,7 +32,7 @@ def fetch_api():
         return response.json()
 
 def create_db(conn):
-    """Creer la db si necessaire"""
+    """Create the db if needed"""
 
     cursor = conn.cursor()
 
@@ -52,7 +52,7 @@ def create_db(conn):
     conn.commit()
 
 def store_data(repos, conn):
-    """Prends les donnees de l'API et creer des tables dans la DB avec ces donnees"""
+    """Take the API data and create tables in the DB with it"""
 
     cursor = conn.cursor()
 
@@ -80,17 +80,17 @@ def enrich_db(conn):
     conn.commit()
 
 def clean_db(conn, min_stars):
-    """enlve les repos stars < min_stars
+    """remove repos with stars < min_stars
 
     Args:
         conn (_type_): current db conection
-        min_stars (_type_): nb mini detoiles
+        min_stars (_type_): minimum number of stars
     """
     cursor = conn.cursor()
 
     cursor.execute("DELETE FROM repos WHERE stars < ? ", (min_stars,))
-    deleted = cursor.rowcount  # Nombre de lignes supprimées
-    print(f"🗑️  Supprimé {deleted} repos")
+    deleted = cursor.rowcount  # Number of deleted rows
+    print(f"🗑️  Deleted {deleted} repos")
     conn.commit()
 
 if __name__ == '__main__':

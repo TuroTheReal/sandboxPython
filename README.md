@@ -49,6 +49,7 @@ and complete mini-projects (linked files, tests, data).
 
 ```
 sandboxPython/
+├── algo-prep/                    # Algorithm interview prep: notes, problem lists, progress (no solutions)
 ├── transaction_assure_project/   # [FULL PROJECT] Transactions, insurance, tests
 │   ├── transaction.py            # Transaction management
 │   ├── assure.py                 # Insurance logic
@@ -59,7 +60,7 @@ sandboxPython/
 │   └── transaction.txt / assure.db / transaction_report.json
 ├── debug_exercises/              # [CATEGORY] Find and fix bugs in broken scripts
 │   └── ex1.py … ex8.py
-├── logs_parsing/                 # [CATEGORY] Parse system logs (nginx, fail2ban, apt)
+├── log_parsing/                  # [CATEGORY] Parse system logs (nginx, fail2ban, apt)
 │   ├── logs.py / nginx.log
 │   ├── reportNginxLog.py
 │   ├── ipBanned_fail2ban.py
@@ -71,6 +72,8 @@ sandboxPython/
 │   ├── testURL.py
 │   ├── scanGitRepo.py
 │   └── fromGitToSQLite.py
+├── katas/                        # [CATEGORY] Realistic exercises with their own tests
+│   └── availabilities/           # Calendar free slots (README = spec)
 ├── Makefile
 ├── requirements.txt
 └── .venv/
@@ -94,7 +97,7 @@ sandboxPython/
 make
 
 # 2. Run a script
-make run FILE=logs_parsing/logs.py
+make run FILE=log_parsing/logs.py
 
 # 3. Run tests for a project
 make test FILE=transaction_assure_project/test_transaction.py
@@ -113,7 +116,7 @@ make test FILE=transaction_assure_project/test_transaction.py
 make run FILE=<folder>/<file.py>
 
 # Examples
-make run FILE=logs_parsing/reportNginxLog.py
+make run FILE=log_parsing/reportNginxLog.py
 make run FILE=transaction_assure_project/incomes.py
 make run FILE=api_exercises/scanGitRepo.py
 ```
@@ -130,15 +133,17 @@ source .venv/bin/activate
 
 ## 🧪 Testing
 
-Tests live in `_project/` folders only (complete exercises with linked files).
+Tests live in `_project/` folders (complete exercises with linked files) and in
+each `katas/<name>/` folder.
 
 ```bash
 make test FILE=transaction_assure_project/test_transaction.py
 make test FILE=transaction_assure_project/test_assure.py
 make test FILE=transaction_assure_project/test_incomes.py
+make test FILE=katas/availabilities/test_availabilities.py
 ```
 
-> Category folders (`debug_exercises/`, `logs_parsing/`, etc.) run individually
+> Category folders (`debug_exercises/`, `log_parsing/`, etc.) run individually
 > via `make run` — no global test suite for isolated scripts.
 
 ---

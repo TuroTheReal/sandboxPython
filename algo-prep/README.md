@@ -1,56 +1,58 @@
 # algo-prep
 
-Entraînement algo pour entretiens SWE (tous types de postes, pas seulement DevOps).
-Objectif: bases solides et durables, prêtes à fignoler quand un entretien tombe.
+Algorithm training for SWE interviews (all kinds of roles, not only DevOps).
+Goal: solid, durable foundations, ready to polish when an interview comes.
 
-Modèle de travail: **LeetCode pour résoudre, ce repo + Claude pour comprendre
-et réviser.**
+Working model: **LeetCode to solve, this repo + Claude to understand and
+review.**
 
-    LeetCode      = la salle de sport. Tu résous, le juge valide (edge cases, timing).
-    repo + Claude = le coach. On explique le pattern avant, on review ta solution
-                    après, on log pour la répétition espacée.
+    LeetCode      = the gym. You solve, the judge validates (edge cases, timing).
+    repo + Claude = the coach. We explain the pattern before, review your solution
+                    after, and log it for spaced repetition.
 
-Ce repo ne contient donc PAS de solutions à faire tourner en local (le juge
-LeetCode est meilleur). Il contient les notes de cours, les listes d'exercices
-et le suivi.
+So this repo does NOT contain solutions to run locally (the LeetCode judge
+does it better). It contains course notes, problem lists and progress tracking.
 
-## Ce qu'il y a dedans
+## What's inside
 
-- `CHEATSHEET.md`             Big-O + toolkit Python, ta référence rapide
-- `PROBLEMS.md`              les pulls d'exercices LeetCode par pattern (easy/medium/hard)
-- `PROGRESS.md`              suivi + répétition espacée ("Seul ?" = la vérité)
-- `patterns/*/README.md`     par pattern: l'idée, les signaux, les outils (le "concept")
-- `patterns/00_fundamentals/` Big-O: leçon + exercice d'analyse de complexité
+- `CHEATSHEET.md`             Big-O + Python toolkit, your quick reference
+- `PYTHON.md`                 common Python methods and idioms
+- `RECOGNITION.md`            which pattern for which problem
+- `PROBLEMS.md`               LeetCode problem pools per pattern (easy/medium/hard) + CodinGame
+- `PROGRESS.md`               tracking + spaced repetition ("Solo?" = the truth)
+- `patterns/*/README.md`      per pattern: the idea, the signals, the tools (the "concept")
+- `patterns/00_fundamentals/` Big-O: lesson + complexity analysis exercise
 
-## La boucle par pattern (la méthodo)
+## The loop per pattern (the method)
 
-Pour chaque step de la roadmap, on tourne ce cycle:
+For each step of the roadmap, we run this cycle:
 
-1. **CONCEPT (Claude)**  je t'explique le pattern: l'idée, quand le reconnaître,
-   une démo jetable. Comme on a fait Big-O.
-2. **PRATIQUE (toi)**    tu pioches dans la pull du pattern (`PROBLEMS.md`),
-   easy/medium/hard selon ta forme, tu résous sur LeetCode sans la solution.
-3. **REVIEW (Claude)**   tu colles ton code + ta complexité, je fais le retour
-   (justesse, complexité réelle, propreté, idiomes Python).
-4. **ANCRAGE**           on note dans `PROGRESS.md`, tu refais à J+2 et J+7.
+1. **CONCEPT (Claude)**  I explain the pattern: the idea, how to recognize it,
+   a throwaway demo. Like we did for Big-O.
+2. **PRACTICE (you)**    you pick from the pattern's pool (`PROBLEMS.md`),
+   easy/medium/hard depending on your shape, and solve on LeetCode without
+   the solution.
+3. **REVIEW (Claude)**   you paste your code + its complexity, I give feedback
+   (correctness, real complexity, cleanliness, Python idioms).
+4. **ANCHORING**         we log it in `PROGRESS.md`, you redo it at D+2 and D+7.
 
-Bloqué plus de ~15 min sur un problème ? Tu demandes un indice, pas la solution.
+Stuck more than ~15 min on a problem? Ask for a hint, not the solution.
 
-## La boucle DANS l'entretien (les 6 étapes, à ritualiser)
+## The loop IN the interview (6 steps, make it a ritual)
 
-1. CLARIFIER    reformuler, edge cases, taille des inputs, contraintes
-2. EXEMPLE      dérouler un cas à la main
-3. BRUTE FORCE  la solution naïve, annoncée avec sa complexité
-4. OPTIMISER    quelle structure de données fait tomber la complexité ?
-5. CODER        proprement, à voix haute
-6. TESTER       cas normal + limites + complexité finale
+1. CLARIFY      rephrase, edge cases, input size, constraints
+2. EXAMPLE      walk through a case by hand
+3. BRUTE FORCE  the naive solution, stated with its complexity
+4. OPTIMIZE     which data structure brings the complexity down?
+5. CODE         cleanly, out loud
+6. TEST         normal case + edge cases + final complexity
 
-## Roadmap (ordre NeetCode, exercices détaillés dans PROBLEMS.md)
+## Roadmap (NeetCode order, problems detailed in PROBLEMS.md)
 
-Core (le gros des entretiens tape ici):
+Core (most interviews hit here):
 
-- [x] 0. Fondamentaux: Big-O + toolkit Python
-- [ ] 1. Arrays & Hashing   (on est ici)
+- [x] 0. Fundamentals: Big-O + Python toolkit
+- [ ] 1. Arrays & Hashing   (we are here)
 - [ ] 2. Two Pointers
 - [ ] 3. Sliding Window
 - [ ] 4. Stack
@@ -58,17 +60,17 @@ Core (le gros des entretiens tape ici):
 - [ ] 6. Linked List
 - [ ] 7. Trees (BFS/DFS)
 
-Avancé (après le core):
+Advanced (after the core):
 
 - [ ] 8. Tries
 - [ ] 9. Heap / Priority Queue
 - [ ] 10. Backtracking
 - [ ] 11. Graphs
-- [ ] 12. Dynamic Programming (1-D puis 2-D)
+- [ ] 12. Dynamic Programming (1-D then 2-D)
 - [ ] 13. Intervals
 - [ ] 14. Greedy
 
-## Rythme
+## Pace
 
-~45 min/jour. Régularité > intensité. La répétition espacée (J+2, J+7) ancre
-plus que le volume.
+~45 min/day. Consistency > intensity. Spaced repetition (D+2, D+7) anchors
+more than volume.

@@ -1,61 +1,67 @@
-# PYTHON — méthodes & idiomes courants
+# PYTHON: common methods and idioms
 
-À garder ouvert pendant que tu codes. La fluidité vient en TAPANT ces trucs,
-pas en les lisant. Cette antisèche te débloque, elle ne remplace pas les reps.
+Keep it open while you code. Fluency comes from TYPING these, not from
+reading them. This cheat sheet unblocks you, it doesn't replace the reps.
 
-## La règle qui te fait rater le plus
+## The rule that trips you up the most
 
-Un appel de méthode a TOUJOURS des parenthèses.
+A method call ALWAYS has parentheses.
 
-    s.lower       -> la méthode elle-même (objet, toujours "vrai"), PAS le résultat
-    s.lower()     -> le résultat            <- c'est ça que tu veux
+    s.lower       -> the method itself (an object, always truthy), NOT the result
+    s.lower()     -> the result             <- this is what you want
 
-Pareil pour `.values()`, `.most_common(k)`, `.isalnum()`, `.keys()`, `.items()`...
-Pas de `()` = pas d'exécution.
+Same for `.values()`, `.most_common(k)`, `.isalnum()`, `.keys()`, `.items()`...
+No `()` = no execution.
 
-## Chaînes (str)
+## Strings (str)
 
-    s.lower() / s.upper()      minuscule / majuscule
-    s.isalnum()                True si lettre OU chiffre (bool)
-    s.isdigit()                True si que des chiffres
-    s.strip()                  enlève les espaces au début/fin
-    s.split(",")               découpe en liste sur le séparateur
-    "-".join(liste)            recolle une liste de str avec un séparateur
-    s[::-1]                    la chaîne à l'envers
+    s.lower() / s.upper()      lowercase / uppercase
+    s.isalnum()                True if letter OR digit (bool)
+    s.isdigit()                True if digits only
+    s.strip()                  removes leading/trailing whitespace
+    s.split(",")               splits into a list on the separator
+    "-".join(items)            joins a list of str with a separator
+    s[::-1]                    the string reversed
 
-## Listes
+## Lists
 
-    lst.append(x)              ajoute en fin
-    sorted(lst)                nouvelle liste triée (O(n log n))
-    lst[::-1]                  la liste à l'envers
-    [x for x in lst if cond]   comprehension: filtre / transforme
-    [a for a, b in paires]     déballage de tuple dans la comprehension
+    lst.append(x)              append at end
+    sorted(lst)                new sorted list (O(n log n))
+    lst[::-1]                  the list reversed
+    [x for x in lst if cond]   comprehension: filter / transform
+    [a for a, b in pairs]      tuple unpacking in a comprehension
 
 ## Dict / set
 
-    d.get(cle, defaut)         lit sans planter (renvoie defaut si absent)
-    d.values() / .keys() / .items()   itérer
-    cle in d                   test d'appartenance O(1)
-    st.add(x)                  ajouter dans un set
+    d.get(key, default)        read without crashing (returns default if missing)
+    d.values() / .keys() / .items()   iterate
+    key in d                   membership test O(1)
+    st.add(x)                  add to a set
 
 ## collections
 
     from collections import Counter, defaultdict
-    Counter(iterable)          compte les occurrences
-    c.most_common(k)           les k plus fréquents -> [(elem, compte), ...]
-    defaultdict(list)          clé absente -> []
-    defaultdict(set)           clé absente -> set()
-    defaultdict(int)           clé absente -> 0   (pour compter)
+    Counter(iterable)          counts occurrences
+    c.most_common(k)           the k most frequent -> [(elem, count), ...]
+    defaultdict(list)          missing key -> []
+    defaultdict(set)           missing key -> set()
+    defaultdict(int)           missing key -> 0   (for counting)
+
+## Numbers
+
+    abs(x)                     distance to 0: abs(-3) == 3, abs(5) == 5
+    max(a, b) / min(a, b)      larger / smaller of two values (also takes an iterable)
+    float('inf')               a value bigger than any number (start of a min search)
 
 ## Conversions
 
     list(x)   set(x)   tuple(x)   str(x)   int(x)
-    tuple(sorted(mot))         clé hashable à partir d'un tri (une "signature")
-    "".join(sorted(mot))       idem, mais en chaîne
+    tuple(sorted(word))        hashable key from a sort (a "signature")
+    "".join(sorted(word))      same, but as a string
 
-## Boucles / indices
+## Loops / indices
 
-    for i, x in enumerate(lst)         indice + valeur en même temps
-    range(deb, fin_exclue, pas)        ex: range(len(l)-1, -1, -1) = parcours à l'envers
-    a // b                             division ENTIÈRE (jette le reste)
-    a / b                              division normale (résultat à virgule)
+    for i, x in enumerate(lst)         index + value at the same time
+    range(start, stop_excl, step)      e.g. range(len(l)-1, -1, -1) = reverse traversal
+    a // b                             INTEGER division (drops the remainder)
+    a / b                              regular division (float result)

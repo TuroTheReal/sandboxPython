@@ -1,46 +1,46 @@
 # CHEATSHEET
 
-Ta référence rapide. À rouvrir pendant chaque problème.
+Your quick reference. Reopen it during every problem.
 
-## Big-O: comment ça grandit quand l'input grandit
+## Big-O: how it grows when the input grows
 
-On ignore les constantes, on garde le terme dominant. `3n + 5` devient `O(n)`.
+Ignore constants, keep the dominant term. `3n + 5` becomes `O(n)`.
 
-| Classe      | Nom            | Exemple typique                        | n=1000 -> ops |
+| Class       | Name           | Typical example                        | n=1000 -> ops |
 |-------------|----------------|----------------------------------------|---------------|
-| O(1)        | constant       | accès dict/set, `list[i]`, arithmétique| 1             |
-| O(log n)    | logarithmique  | binary search (diviser par 2)          | ~10           |
-| O(n)        | linéaire       | parcourir une fois                     | 1 000         |
-| O(n log n)  | quasi-linéaire | `sorted()`, diviser-pour-régner        | ~10 000       |
-| O(n²)       | quadratique    | double boucle imbriquée                | 1 000 000     |
-| O(2^n)      | exponentiel    | récursion qui explore tout             | astronomique  |
+| O(1)        | constant       | dict/set access, `list[i]`, arithmetic | 1             |
+| O(log n)    | logarithmic    | binary search (halving)                | ~10           |
+| O(n)        | linear         | one pass                               | 1 000         |
+| O(n log n)  | linearithmic   | `sorted()`, divide and conquer         | ~10 000       |
+| O(n²)       | quadratic      | nested double loop                     | 1 000 000     |
+| O(2^n)      | exponential    | recursion that explores everything     | astronomical  |
 
-Du meilleur (haut) au pire (bas). En entretien, on part souvent d'une O(n²)
-et on la fait tomber en O(n) grâce à un hashmap. C'est LE move.
+From best (top) to worst (bottom). In interviews, you often start from an
+O(n²) and bring it down to O(n) with a hashmap. That's THE move.
 
-## Toolkit Python: structures et complexités
+## Python toolkit: structures and complexities
 
-| Opération                       | list         | dict / set    | deque          |
+| Operation                       | list         | dict / set    | deque          |
 |---------------------------------|--------------|---------------|----------------|
-| accès par index `x[i]`          | O(1)         | -             | O(1) aux bouts |
-| recherche `y in x`              | O(n)  PIÈGE  | O(1) moyen    | O(n)           |
-| ajout en fin `.append()`        | O(1) amorti  | O(1) (`add`)  | O(1)           |
-| ajout/retrait en tête           | O(n)         | -             | O(1)           |
-| retrait `.pop()`                | O(1) en fin  | O(1)          | O(1) aux bouts |
+| index access `x[i]`             | O(1)         | -             | O(1) at ends   |
+| lookup `y in x`                 | O(n)  TRAP   | O(1) average  | O(n)           |
+| append at end `.append()`       | O(1) amort.  | O(1) (`add`)  | O(1)           |
+| insert/remove at head           | O(n)         | -             | O(1)           |
+| remove `.pop()`                 | O(1) at end  | O(1)          | O(1) at ends   |
 
-`y in une_liste` est O(n): c'est le piège n°1. Si tu testes l'appartenance
-en boucle, convertis en `set` d'abord -> O(1).
+`y in a_list` is O(n): that's trap #1. If you test membership in a loop,
+convert to a `set` first -> O(1).
 
-## Les réflexes qui transforment une O(n²) en O(n)
+## Reflexes that turn an O(n²) into an O(n)
 
-- "Est-ce que j'ai déjà vu X ?"          -> `set` (lookup O(1))
-- "Combien de fois X apparaît ?"         -> `collections.Counter`
-- "Un compteur par clé sans KeyError"    -> `collections.defaultdict(int)`
-- "File d'attente aux deux bouts"        -> `collections.deque`
-- Tri: `sorted(x)` est O(n log n), jamais O(n). Un tri gratuit n'existe pas.
+- "Have I already seen X?"               -> `set` (O(1) lookup)
+- "How many times does X appear?"        -> `collections.Counter`
+- "A counter per key without KeyError"   -> `collections.defaultdict(int)`
+- "Queue with both ends"                 -> `collections.deque`
+- Sorting: `sorted(x)` is O(n log n), never O(n). There's no free sort.
 
 ## Time vs Space
 
-Un hashmap coûte O(n) mémoire pour gagner du temps. C'est le tradeoff
-classique: on échange de l'espace contre de la vitesse. En entretien,
-annonce TOUJOURS les deux: `# Time: O(n)  Space: O(n)`.
+A hashmap costs O(n) memory to save time. That's the classic tradeoff:
+you trade space for speed. In interviews, ALWAYS state both:
+`# Time: O(n)  Space: O(n)`.

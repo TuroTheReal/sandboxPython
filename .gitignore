@@ -1,7 +1,7 @@
 # Virtual environment
 .venv/
 
-# Python cache (tous niveaux)
+# Python cache (all levels)
 __pycache__/
 *.pyc
 *.pyo

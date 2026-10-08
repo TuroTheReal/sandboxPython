@@ -1,38 +1,38 @@
-# RECOGNITION — quel pattern pour quel problème
+# RECOGNITION: which pattern for which problem
 
-Le réflexe d'entretien: lire l'énoncé, repérer un SIGNAL, en déduire l'outil.
-Cette table est ta grille de lecture. Avec les reps, elle passe dans ta tête et
-tu n'auras plus besoin de la relire.
+The interview reflex: read the statement, spot a SIGNAL, deduce the tool.
+This table is your reading grid. With reps, it moves into your head and you
+won't need to reread it.
 
-## Signaux → réflexe
+## Signals → reflex
 
-| Dans l'énoncé tu vois...                                      | Réflexe / outil |
-|---------------------------------------------------------------|-----------------|
-| "déjà vu ?", "doublon", "tous distincts", "unique"            | **set** (`in` O(1), `.add`) |
-| "combien de fois", "fréquence", "anagramme"                   | **Counter** |
-| "les K plus fréquents", "top K"                               | **Counter.most_common(k)** |
-| "retrouver par valeur" (son indice, sa position, un lien)     | **dict** `{valeur: info}` (façon Two Sum) |
-| "grouper par une clé / signature commune"                     | **defaultdict(list)** |
-| "tableau TRIÉ" + "une paire / deux nombres qui..."            | **two pointers** convergents (left/right) |
-| "sous-tableau / sous-chaîne CONTIGUË" (plus long / plus court)| **sliding window** (fenêtre + left/right) |
-| "le max / min / meilleur AU FIL du parcours"                  | **accumulateur** (var dehors + `max`/`min` dedans) |
-| "communs / union / différence" entre deux collections        | **opérations de sets** (`&`, `\|`, `-`) |
-| "par positions / à l'envers / par pas de 2"                   | **range(start, stop, step)** |
+| In the statement you see...                                   | Reflex / tool |
+|---------------------------------------------------------------|---------------|
+| "seen before?", "duplicate", "all distinct", "unique"         | **set** (`in` O(1), `.add`) |
+| "how many times", "frequency", "anagram"                      | **Counter** |
+| "the K most frequent", "top K"                                | **Counter.most_common(k)** |
+| "find back by value" (its index, its position, a link)        | **dict** `{value: info}` (Two Sum style) |
+| "group by a common key / signature"                           | **defaultdict(list)** |
+| "SORTED array" + "a pair / two numbers that..."               | converging **two pointers** (left/right) |
+| "CONTIGUOUS subarray / substring" (longest / shortest)        | **sliding window** (window + left/right) |
+| "the max / min / best ALONG the traversal"                    | **accumulator** (var outside + `max`/`min` inside) |
+| "common / union / difference" between two collections        | **set operations** (`&`, `\|`, `-`) |
+| "by positions / reversed / every 2 steps"                     | **range(start, stop, step)** |
 
-## Le réflexe d'or (90% des optimisations)
+## The golden reflex (90% of optimizations)
 
-Remplacer une **recherche** par un **hashmap**:
+Replace a **search** with a **hashmap**:
 
-- `x in liste` (O(n))  →  `x in set/dict` (O(1))
-- "je re-parcours pour retrouver un truc"  →  je le **mémorise** dans un set/dict au passage.
+- `x in list` (O(n))  →  `x in set/dict` (O(1))
+- "I traverse again to find something"  →  I **remember** it in a set/dict along the way.
 
-Si tu bloques sur "comment optimiser", demande-toi:
-> "Qu'est-ce que je re-cherche en boucle, et est-ce que je pourrais le mémoriser
-> une fois pour le retrouver en O(1) ?"
+If you're stuck on "how do I optimize", ask yourself:
+> "What am I searching for again in a loop, and could I remember it
+> once to find it back in O(1)?"
 
-## La démarche quand tu lis un problème neuf
+## The approach when you read a new problem
 
-1. Quelle est la **structure** de l'input ? (tableau trié ? chaîne ? paires ?)
-2. Qu'est-ce que je **cherche** ? (un doublon ? une paire ? le plus long ? un compte ?)
-3. Ces deux réponses → un signal de la table → un outil.
-4. **Brute force d'abord** (annonce sa complexité), **puis optimise** avec le bon outil.
+1. What is the **structure** of the input? (sorted array? string? pairs?)
+2. What am I **looking for**? (a duplicate? a pair? the longest? a count?)
+3. These two answers → a signal from the table → a tool.
+4. **Brute force first** (state its complexity), **then optimize** with the right tool.

@@ -1,50 +1,49 @@
-# Leçon 0: Big-O
+# Lesson 0: Big-O
 
-Big-O répond à UNE question: quand l'input double, mon code met combien de
-temps en plus ? (ou combien de mémoire en plus ?)
+Big-O answers ONE question: when the input doubles, how much more time does
+my code take? (or how much more memory?)
 
-Ce n'est pas un chronomètre. C'est un taux de croissance. On ignore les
-constantes et les petits termes, on garde le terme dominant:
+It's not a stopwatch. It's a growth rate. Ignore constants and small terms,
+keep the dominant term:
 
     3n + 5      -> O(n)
-    n² + 100n   -> O(n²)     (pour n grand, n² écrase 100n)
+    n² + 100n   -> O(n²)     (for large n, n² crushes 100n)
     2           -> O(1)
 
-## Compter, concrètement
+## Counting, concretely
 
-1. Une boucle sur n éléments               -> O(n)
-2. Une boucle DANS une boucle (n x n)      -> O(n²)
-3. Deux boucles l'une APRÈS l'autre        -> O(n) + O(n) = O(n), PAS O(n²)
-4. Diviser le problème par 2 à chaque tour -> O(log n)
-5. Trier                                   -> O(n log n)
+1. A loop over n elements                  -> O(n)
+2. A loop INSIDE a loop (n x n)            -> O(n²)
+3. Two loops one AFTER the other           -> O(n) + O(n) = O(n), NOT O(n²)
+4. Halving the problem at each step        -> O(log n)
+5. Sorting                                 -> O(n log n)
 
-Piège classique: `y in ma_liste` n'est pas gratuit, c'est O(n) (Python
-parcourt la liste). Mets-le dans une boucle et tu as un O(n²) caché. Le même
-test sur un `set` est O(1).
+Classic trap: `y in my_list` isn't free, it's O(n) (Python walks the list).
+Put it in a loop and you get a hidden O(n²). The same test on a `set` is O(1).
 
-## Le move d'optimisation (ton "opti de A à Z")
+## The optimization move (your "A to Z optimization")
 
-    # Brute force: pour chaque élément, rechercher dans la liste
+    # Brute force: for each element, search in the list
     for i in range(n):          # O(n)
         for j in range(n):      # x O(n)
             ...                 # => O(n²)
 
-    # Optimisé: un hashmap pour se souvenir de ce qu'on a déjà vu
-    vus = set()                 # O(n) mémoire
+    # Optimized: a hashmap to remember what we've already seen
+    seen = set()                # O(n) memory
     for x in nums:              # O(n)
-        if besoin in vus: ...   # O(1) lookup
-        vus.add(x)              # => O(n) total
+        if needed in seen: ...  # O(1) lookup
+        seen.add(x)             # => O(n) total
 
-On a échangé de la mémoire (le set) contre de la vitesse. C'est le tradeoff
-time/space, et c'est ce que Datadog & co veulent t'entendre expliquer.
+We traded memory (the set) for speed. That's the time/space tradeoff, and
+it's what interviewers want to hear you explain.
 
-## Ton exercice
+## Your exercise
 
-Ouvre `bigo_exercices.py`. Pour chaque fonction, écris en commentaire:
+Open `bigo_exercises.py`. For each function, write as a comment:
 
-- la complexité TEMPS
-- la complexité ESPACE (mémoire en plus, hors input)
-- pourquoi, en une ligne
+- the TIME complexity
+- the SPACE complexity (extra memory, excluding the input)
+- why, in one line
 
-Ne devine pas au feeling: compte les boucles, repère les `in liste`, les tris.
-Quand tu as fait les 7, dis-moi et je corrige avec toi.
+Don't guess by feel: count the loops, spot the `in list`, the sorts.
+When you've done all 7, tell me and we'll correct them together.

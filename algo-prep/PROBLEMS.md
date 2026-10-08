@@ -1,20 +1,20 @@
-# PROBLEMS — pulls d'exercices par pattern
+# PROBLEMS: problem pools per pattern
 
-Liste NeetCode 150 (curation standard pour entretiens SWE), rangée par pattern
-puis par difficulté. Choisis selon ta forme du jour: **easy** pour installer le
-réflexe, **medium** = le vrai niveau entretien, **hard** = pour pousser.
+NeetCode 150 list (standard curation for SWE interviews), sorted by pattern
+then by difficulty. Pick according to your shape of the day: **easy** to
+install the reflex, **medium** = the real interview level, **hard** = to push.
 
-Numéros LeetCode indicatifs, **le titre est la source de vérité** (cherche le
-titre sur leetcode.com). Version interactive: neetcode.io/practice.
-`(Premium)` = verrouillé sur LeetCode sans abonnement, mais faisable gratos
-sur neetcode.io.
+LeetCode numbers are indicative, **the title is the source of truth** (search
+the title on leetcode.com). Interactive version: neetcode.io/practice.
+`(Premium)` = locked on LeetCode without a subscription, but doable for free
+on neetcode.io.
 
-Pour cocher un pattern: les easy quasi sans réfléchir, puis **2-3 medium sans
-indice**. Les hard sont optionnels tant que tu construis la base.
+To check off a pattern: the easy ones almost without thinking, then **2-3
+medium without a hint**. Hard ones are optional while you build the base.
 
 ---
 
-# Core (le gros des entretiens tape ici)
+# Core (most interviews hit here)
 
 ## 1. Arrays & Hashing
 
@@ -152,7 +152,7 @@ Hard
 
 ---
 
-# Avancé (après le core)
+# Advanced (after the core)
 
 ## 8. Tries
 
@@ -260,6 +260,8 @@ Medium
 - #56 Merge Intervals
 - #435 Non-overlapping Intervals
 - #253 Meeting Rooms II (Premium)
+- #986 Interval List Intersections (outside NeetCode 150: common slots of 2 calendars)
+- #1094 Car Pooling (outside NeetCode 150: difference array over intervals)
 
 Hard
 
@@ -278,7 +280,29 @@ Medium
 
 ---
 
-Extras hors roadmap (utiles, moins prioritaires):
+Extras outside the roadmap (useful, lower priority):
 
 - Math & Geometry: #48 Rotate Image, #54 Spiral Matrix, #73 Set Matrix Zeroes
 - Bit Manipulation: #136 Single Number, #191 Number of 1 Bits, #338 Counting Bits
+
+---
+
+# CodinGame (screening test format)
+
+LeetCode trains the patterns, CodinGame trains the format: long statement,
+input on stdin, strict output on stdout (debug on stderr), hidden tests that
+break brute force on large inputs. URL: `codingame.com/training/<level>/<slug>`.
+
+Easy
+
+- The Descent (`easy/the-descent`): getting used to stdin/stdout
+- Temperatures (`easy/temperatures`): min with a tie-break rule
+- Horse-racing Duals (`easy/horse-racing-duals`): sort then compare neighbors
+- MIME Type (`easy/mime-type`): dict + parsing
+- Defibrillators (`easy/defibrillators`): parsing + computation
+
+Medium
+
+- Shadows of the Knight 1 (`medium/shadows-of-the-knight-episode-1`): 2D binary search
+- There is no Spoon 1 (`medium/there-is-no-spoon-episode-1`): grid
+- Stock Exchange Losses (`medium/stock-exchange-losses`): single-pass accumulator

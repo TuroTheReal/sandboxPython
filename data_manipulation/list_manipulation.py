@@ -1,9 +1,9 @@
 """
-Exercice 1: Manipulation basique listes et dicts
-Contexte: Tu as des données utilisateurs à filtrer
+Exercise 1: basic list and dict manipulation
+Context: you have user data to filter
 """
 
-# Données
+# Data
 users = [
     {'name': 'Alice', 'age': 25, 'active': True, 'role': 'admin'},
     {'name': 'Bob', 'age': 7, 'active': True, 'role': 'user'},
@@ -12,7 +12,7 @@ users = [
     {'name': 'Eve', 'age': 19, 'active': False, 'role': 'user'}
 ]
 
-# TODO 1: Filtre users actifs ET majeurs (>= 18)
+# TODO 1: Filter users who are active AND adults (>= 18)
 def get_active_adults(users):
     active_adults = []
     for user in users:
@@ -20,14 +20,14 @@ def get_active_adults(users):
             active_adults.append(user)
     return active_adults
 
-# TODO 2: Compte users par rôle
+# TODO 2: Count users per role
 def count_by_role(users):
     count = {}
     for user in users:
         count[user['role']] = count.get(user['role'], 0) + 1
     return count
 
-# TODO 3: Trouve le plus jeune user actif
+# TODO 3: Find the youngest active user
 def youngest_active(users):
     youngest = None
     for user in users:

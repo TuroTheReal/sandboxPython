@@ -1,25 +1,25 @@
 """
-Exercice 2: Validation et parsing strings
-Contexte: Valider format données emails
+Exercise 2: string validation and parsing
+Context: validate the format of email data
 """
 
-# TODO 1: Valider format email
+# TODO 1: Validate email format
 def is_valid_email(email):
     """
-    Valide format email basique.
+    Validate a basic email format.
 
     Rules:
-    - Doit contenir exactement un @
-    - Partie après @ doit contenir au moins un .
+    - Must contain exactly one @
+    - The part after @ must contain at least one .
 
-    Return: True si valide, False sinon
+    Return: True if valid, False otherwise
 
     Examples:
     - 'alice@gmail.com' → True
     - 'bob@yahoo.co.uk' → True
-    - 'invalid-email' → False (pas de @)
-    - 'test@@example.com' → False (deux @)
-    - 'user@domain' → False (pas de . après @)
+    - 'invalid-email' → False (no @)
+    - 'test@@example.com' → False (two @)
+    - 'user@domain' → False (no . after @)
     """
 
     if '@' not in email:
@@ -34,12 +34,12 @@ def is_valid_email(email):
 
     return True
 
-# TODO 2: Extraire domaine d'email
+# TODO 2: Extract the domain of an email
 def get_domain(email):
     """
-    Extrait le domaine d'un email.
+    Extract the domain of an email.
 
-    Return: domaine (str) ou None si email invalide
+    Return: domain (str) or None if the email is invalid
 
     Examples:
     - 'alice@gmail.com' → 'gmail.com'
@@ -53,13 +53,13 @@ def get_domain(email):
         return None
 
 
-# TODO 3: Grouper emails par domaine
+# TODO 3: Group emails by domain
 def group_by_domain(emails):
     """
-    Groupe une liste d'emails par domaine.
+    Group a list of emails by domain.
 
-    Return: dict avec domaine comme key, liste emails comme value
-    Ignore les emails invalides
+    Return: dict with domain as key, list of emails as value
+    Ignore invalid emails
 
     Example:
     Input: ['alice@gmail.com', 'bob@yahoo.com', 'charlie@gmail.com', 'invalid']
@@ -82,7 +82,7 @@ def group_by_domain(emails):
 if __name__ == "__main__":
     # Test 1: Validation
     print("=" * 30)
-    print("TEST 1: Validation emails")
+    print("TEST 1: Email validation")
     print("=" * 30)
     test_emails = [
         'alice@gmail.com',
@@ -100,9 +100,9 @@ if __name__ == "__main__":
         print(f"  {status} {email}")
     print()
 
-    # Test 2: Extraction domaine
+    # Test 2: Domain extraction
     print("=" * 30)
-    print("TEST 2: Extraction domaines")
+    print("TEST 2: Domain extraction")
     print("=" * 30)
     for email in test_emails:
         domain = get_domain(email)
@@ -112,9 +112,9 @@ if __name__ == "__main__":
             print(f"  ❌ {email:25} → Invalid")
     print()
 
-    # Test 3: Groupement
+    # Test 3: Grouping
     print("=" * 30)
-    print("TEST 3: Groupement par domaine")
+    print("TEST 3: Grouping by domain")
     print("=" * 30)
     grouped = group_by_domain(test_emails)
     for domain, emails in grouped.items():

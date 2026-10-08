@@ -1,57 +1,57 @@
 # Pattern 1: Arrays & Hashing
 
-## L'idée en une phrase
+## The idea in one sentence
 
-Quand tu es tenté de RE-parcourir la liste à l'intérieur d'une boucle (donc
-O(n²)), remplace cette recherche par un hashmap (`dict` / `set`): lookup O(1),
-et l'ensemble tombe en O(n). C'est le réflexe du n°6 de l'exo Big-O.
+When you're tempted to traverse the list AGAIN inside a loop (so O(n²)),
+replace that search with a hashmap (`dict` / `set`): O(1) lookup, and the
+whole thing drops to O(n). It's the reflex from #6 of the Big-O exercise.
 
-## Les signaux qui disent "c'est ce pattern"
+## The signals that say "it's this pattern"
 
-- "y a-t-il un doublon ?"
-- "compte les occurrences de..."
-- "ai-je déjà vu X ?"
-- "deux éléments dont la somme vaut K"
-- "groupe les anagrammes / les éléments identiques"
+- "is there a duplicate?"
+- "count the occurrences of..."
+- "have I already seen X?"
+- "two elements whose sum is K"
+- "group anagrams / identical elements"
 
-Dès que tu penses "il faudrait retrouver quelque chose vu plus tôt", hashmap.
+As soon as you think "I'd need to find something seen earlier", hashmap.
 
-## Tes outils
+## Your tools
 
-| Besoin                             | Outil                       | Lookup |
+| Need                               | Tool                        | Lookup |
 |------------------------------------|-----------------------------|--------|
-| "ai-je déjà vu X ?"                | `set`                       | O(1)   |
-| "combien de fois X ?"              | `collections.Counter`       | O(1)   |
-| "accumuler par clé sans KeyError"  | `collections.defaultdict`   | O(1)   |
-| "associer une valeur à une clé"    | `dict`                      | O(1)   |
+| "have I already seen X?"           | `set`                       | O(1)   |
+| "how many times X?"                | `collections.Counter`       | O(1)   |
+| "accumulate per key, no KeyError"  | `collections.defaultdict`   | O(1)   |
+| "map a value to a key"             | `dict`                      | O(1)   |
 
-## Démo (exemple jetable, pas un exo)
+## Demo (throwaway example, not an exercise)
 
-Compter chaque caractère d'une chaîne.
+Count each character of a string.
 
-    # BRUTE FORCE: pour chaque lettre, recompter toute la chaine
-    #   s.count(c) est O(n), dans une boucle => O(n²)
+    # BRUTE FORCE: for each letter, recount the whole string
+    #   s.count(c) is O(n), inside a loop => O(n²)
     #
-    # OPTIMISE: un seul passage, on incremente un compteur au vol
+    # OPTIMIZED: a single pass, increment a counter on the fly
 
-    def compte_lettres(s: str) -> dict[str, int]:
-        compteur: dict[str, int] = {}
-        for c in s:                               # O(n)
-            compteur[c] = compteur.get(c, 0) + 1  # get + set dict = O(1)
-        return compteur
-    # Time: O(n)   Space: O(k), k = nb de caracteres distincts
+    def count_letters(s: str) -> dict[str, int]:
+        counter: dict[str, int] = {}
+        for c in s:                             # O(n)
+            counter[c] = counter.get(c, 0) + 1  # dict get + set = O(1)
+        return counter
+    # Time: O(n)   Space: O(k), k = number of distinct characters
 
-Le squelette est toujours le même: **un seul passage + un dict/set pour
-mémoriser au vol**. Tu vas le refaire plusieurs fois.
+The skeleton is always the same: **a single pass + a dict/set to remember
+on the fly**. You'll redo it several times.
 
-(`collections.Counter(s)` fait ça en une ligne. Mais comprends la version
-manuelle d'abord: c'est celle qu'on te demande d'écrire au tableau.)
+(`collections.Counter(s)` does it in one line. But understand the manual
+version first: it's the one you'll be asked to write on the whiteboard.)
 
-## Les problèmes LeetCode
+## LeetCode problems
 
-La liste complète easy/medium/hard de ce pattern est dans `../../PROBLEMS.md`
-(section "1. Arrays & Hashing"). Commence par les 3 easy (#217, #242, #1),
-enchaîne sur les medium quand le réflexe est là.
+The full easy/medium/hard list for this pattern is in `../../PROBLEMS.md`
+(section "1. Arrays & Hashing"). Start with the 3 easy ones (#217, #242, #1),
+move on to the medium ones when the reflex is there.
 
-Sur leetcode.com, sans regarder la solution. Colle-moi ton code + ta
-complexité (Time + Space) après chacun, je review. Objectif: viser O(n).
+On leetcode.com, without looking at the solution. Paste me your code + its
+complexity (Time + Space) after each one, I review. Goal: aim for O(n).

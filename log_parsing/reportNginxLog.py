@@ -60,4 +60,4 @@ if __name__ == '__main__':
     with open('nginx_report.json', 'w') as f:
         json.dump(report, f, indent=2)
 
-    print("✅ Rapport généré : nginx_report.json")
+    print("✅ Report generated: nginx_report.json")
