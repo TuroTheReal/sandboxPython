@@ -27,25 +27,30 @@ the final mock. LC = LeetCode, CG = CodinGame (list and URLs in `PROBLEMS.md`).
 One "Day" = one work session, not a calendar day. Reviews = redo from memory
 (D+2 ~ 2 sessions later, D+7 ~ 5 sessions later). Load = new + review items.
 
+Priority: binary search (1D then 2D, then binary search on the answer) comes
+right after the two pointers, ahead of stack and intervals.
+
 | Day | Done | Theme | New | Reviews | Load |
 |-----|------|-------|-----|---------|------|
 | 1 | [x] | hashing review + accumulator | LC #217, #1 · CG The Descent, Temperatures | (D+7 of #217, #1) | 4 |
-| 2 | [~] | two pointers | LC #167, #238, #125 (v1) done · left: CG Horse-racing Duals (started) | #344 (overdue) left | 5 (3 done) |
-| 3 | [ ] | carry-over + stack | Carry-over first: CG Horse-racing Duals, LC #344 review. Then LC #20, #739 · CG MIME Type | #49, #347 (overdue) | 7 |
-| 4 | [ ] | intervals 1 | LC #56, #57, #986 | D+2: The Descent, Temperatures, #238, #125 | 7 |
-| 5 | [ ] | intervals 2 + binary search | LC #435, #1094, #704 | D+2: #20, #739 | 5 |
-| 6 | [ ] | grid BFS/DFS | LC #200, #994 | D+2: #56, #57, #986 | 5 |
-| 7 | [ ] | D+7 reviews + kata | kata `katas/availabilities/` | D+7: The Descent, Temperatures, #238, #125, #739 · D+2: #435, #1094, #704 | 9 (lighter if D+2 ones are SOLID) |
-| 8 | [ ] | timed mock (1h, the only timed session) | 1 easy + CG Stock Exchange Losses + Python MCQ | D+7: #56, #986 · D+2: #200, #994 | 3 + 4 |
+| 2 | [~] | two pointers | LC #167, #238, #125 (v1) done · left: CG Horse-racing Duals (started) | (#344 moved to day 3) | 4 (3 done) |
+| 3 | [ ] | binary search 1 (1D + 2D matrix) | LC #704, #74 | #344 (overdue) · D+2: The Descent, Temperatures | 5 |
+| 4 | [ ] | binary search 2 (2D game + on the answer) | CG Shadows of the Knight 1 · LC #875 | D+2: #238, #125 (v2), Horse-racing Duals | 5 |
+| 5 | [ ] | stack | LC #20, #739 · CG MIME Type | D+2: #704, #74 | 5 |
+| 6 | [ ] | intervals | LC #56, #57, #435, #986 | D+2: Shadows of the Knight 1, #875 | 6 |
+| 7 | [ ] | grid BFS/DFS | LC #200, #994 | D+2: #20, #739, MIME Type | 5 |
+| 8 | [ ] | D+7 reviews + kata | kata `katas/availabilities/` | D+7: #704, #74, #238, #125 · D+2: #56, #57, #435, #986 | 9 (lighter if D+2 ones are SOLID) |
+| 9 | [ ] | timed mock (1h, the only timed session) | 1 easy + 1 hard unseen, pattern picked by Claude among those seen and not announced + Python MCQ | D+7: Shadows of the Knight 1, #875 · D+2: #200, #994 | 3 + 4 |
 
-Day 4 and Day 7 are the heaviest: if short on time, keep the new problems and
-the reviews of GUIDED/GIVEN items, skip reviews of items already SOLID.
+Day 8 is the heaviest: if short on time, keep the new problems and the
+reviews of GUIDED/GIVEN items, skip reviews of items already SOLID.
 
 Optional (only if ahead):
 
-- LC #875 Koko Eating Bananas (binary search on the answer)
-- CG Defibrillators (parsing), Shadows of the Knight 1 (2D binary search), There is no Spoon 1 (grid)
-- Overdue reviews: #11, #121, #3, #383, #349, #219, #205
+- LC #153, #33 (binary search on a rotated sorted array)
+- CG Stock Exchange Losses (accumulator), Defibrillators (parsing), There is no Spoon 1 (grid)
+- LC #1094 Car Pooling (intervals)
+- Overdue reviews: #49, #347, #11, #121, #3, #383, #349, #219, #205
 
 | Date       | Problem                   | Pattern        | Time  | Level  | D+2       | D+7       | Notes |
 |------------|---------------------------|----------------|-------|--------|-----------|-----------|-------|
