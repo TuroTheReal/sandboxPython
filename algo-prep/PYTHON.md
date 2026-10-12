@@ -73,3 +73,20 @@ No `()` = no execution.
     reversed(range(len(l)))            same reverse traversal, easier to read
     a // b                             INTEGER division (drops the remainder)
     a / b                              regular division (float result)
+    range(n, 1, 1)                     EMPTY: positive step counts up, so start >= stop gives nothing
+
+## Size vs position (off-by-one)
+
+    size = how many cells (len)        index = cell number, starts at 0
+    len(l) == n                        valid indices 0 .. n - 1, so n is NEVER a valid index
+    left, right = 0, len(l) - 1        binary search bounds are INCLUDED (positions)
+    range(stop)                        stop is EXCLUDED, so range(n) is exactly the valid indices
+    Before any bound: position or size? included or excluded? first value? last value?
+
+## Grids: x/y vs w/h
+
+    x = column, size w (width),  L/R,  0 (left) .. w - 1 (right)
+    y = row,    size h (height), U/D,  0 (top)  .. h - 1 (bottom)   y grows DOWNWARD
+    coordinates are written (x, y), but a list of lists is indexed grid[y][x] (row first)
+    len(grid) == h,  len(grid[0]) == w
+    Name bounds after their axis (x_min, y_max): the letter must match x0 / y0
